@@ -78,3 +78,40 @@ sampleData="Age of the person is 18, Sector is 52";
 //In the above string, want to extract only the numbers
 console.log(sampleData.match("[a-z]"));
 console.log(sampleData.replaceAll("[a-z]",""));
+
+sampleData="New Sets of Informations to be proceessed";
+
+//.slice() --> It is also similar to .substring() but if we pass a -ve value it will read the string from right to left
+console.log(sampleData.slice(-7,-5));
+console.log(sampleData.slice(3,-6));
+
+//If the start index position is greater than end index position it will return a blank string
+console.log(sampleData.slice(-9,-20));
+
+//From ES6 Onwards, we are able to use multi line strings
+
+//Old way of declaring the string with multiple lines 
+sampleData="JavaScript is one of the most widely used programming languages in the world today. It was created in 1995 by Brendan Eich in just ten days, and it was originally built to make web pages interactive. Over the years the language has grown far beyond the browser, and today it runs on servers, mobile applications, desktop applications and even small embedded devices"+"\n"
++"Strings are one of the most important data types in JavaScript. A string is simply a sequence of characters enclosed within single quotes, double quotes or backticks. Every character in a string has an index position that starts from 0, and the total number of characters can be found using the length property"+"\n"
++"JavaScript provides a rich set of built-in methods to work with strings. We can use charAt() to read a character, indexOf() and lastIndexOf() to search for a value, substring() and slice() to extract a part of the string, replace() and replaceAll() to change the content, trim() to remove unwanted whitespaces and repeat() to duplicate the data. Strings are immutable, which means that none of these methods change the original string; they always return a new one."+"\n"
++"Understanding these string concepts clearly is very important for every automation tester, because test data, locators, URLs, error messages and API responses are almost always handled as strings."+"\n";
+
+//Template literals (backticks) preserve the line breaks, so a big paragraph can be written across many lines
+sampleData=`JavaScript is one of the most widely used programming languages in the world today. It was created in 1995 by Brendan Eich in just ten days, and it was originally built to make web pages interactive. Over the years the language has grown far beyond the browser, and today it runs on servers, mobile applications, desktop applications and even small embedded devices
+Strings are one of the most important data types in JavaScript. A string is simply a sequence of characters enclosed within single quotes, double quotes or backticks. Every character in a string has an index position that starts from 0, and the total number of characters can be found using the length property
+JavaScript provides a rich set of built-in methods to work with strings. We can use charAt() to read a character, indexOf() and lastIndexOf() to search for a value, substring() and slice() to extract a part of the string, replace() and replaceAll() to change the content, trim() to remove unwanted whitespaces and repeat() to duplicate the data. Strings are immutable, which means that none of these methods change the original string; they always return a new one.
+Understanding these string concepts clearly is very important for every automation tester, because test data, locators, URLs, error messages and API responses are almost always handled as strings.`
+
+console.log(sampleData);
+
+//Prints the total number of characters present in the big paragraph
+console.log(sampleData.length);
+
+//Prints the number of lines present in the paragraph by splitting the data on the new line character
+//sampleData will return an array of String Values
+console.log(sampleData.split("\n").length);
+
+//Checks whether a particular word is present in the paragraph
+console.log(sampleData.includes("immutable"));
+console.log(sampleData.indexOf("Strings"));
+

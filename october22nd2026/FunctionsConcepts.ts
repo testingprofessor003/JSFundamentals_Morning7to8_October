@@ -24,5 +24,5 @@ sample();
 console.log(sample); //Prints the function name called as "sample"
 
 //This is used to compile the typescript file and it will generate an equivalent .js file
-//npx tsc october22nd2026/FunctionsConcepts.ts
+//npx tsc october22nd2026/FunctionsConcepts.ts₹
 //node october22nd2026/FunctionsConcepts.js

@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    // JS version the code is checked against (latest features allowed)
+    "target": "esnext",
+
+    // Module system and how imports are resolved (modern Node behaviour)
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+
+    // Turns on all strict checks: no implicit any, null checks, strict function types, etc.
+    "strict": true,
+
+    // Only report type errors; don't write any .js files
+    "noEmit": true,
+
+    // Skip type-checking of .d.ts files in node_modules (faster, fewer unrelated errors)
+    "skipLibCheck": true
+  },
+
+  // Only these files are type-checked
+  //"include": ["october26th2026/**/*.ts"]
+}

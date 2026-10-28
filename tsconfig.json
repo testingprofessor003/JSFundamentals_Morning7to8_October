@@ -14,7 +14,11 @@
     "noEmit": true,
 
     // Skip type-checking of .d.ts files in node_modules (faster, fewer unrelated errors)
-    "skipLibCheck": true
+    "skipLibCheck": true,
+
+    //With this key, we are enabling the concept of import/export function in the typescript programming language
+    //Works in hand with noEmit:true
+    "allowImportingTsExtensions":true
   },
 
   // Only these files are type-checked

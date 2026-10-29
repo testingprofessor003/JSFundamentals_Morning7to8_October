@@ -16,5 +16,7 @@ console.log(mathematicalOperations(40,90,(a:number,b:number) => a*b));
 
 console.log(mathematicalOperations(50,90,(a:number,b:number) => a/b));
 
+console.log(mathematicalOperations(90,100, (a:string,b:string)=> a+b));
+
 //Nested Callback: Calling one more callback inside another callback which led to the concept
 //of callback hell or pyramid of doom

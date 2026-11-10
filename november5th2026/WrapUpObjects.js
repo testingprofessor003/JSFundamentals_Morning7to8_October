@@ -102,4 +102,3 @@ console.log(careerStats);
 //Suppose if the same keys are present in both the objects, value present on the right most side will be taken
 let updatedStats=Object.assign({},battingStats,{runsScored:15000});
 console.log(updatedStats);
-

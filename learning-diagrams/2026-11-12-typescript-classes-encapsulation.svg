@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100">
+<defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0L12 6L0 12z" fill="#65829c"/></marker></defs>
+<rect width="1600" height="1100" fill="#f5f8fc"/>
+<text x="80" y="85" font-family="Arial" font-size="22" font-weight="bold" letter-spacing="3" fill="#53728e">12 NOVEMBER 2026  /  TYPESCRIPT</text>
+<text x="80" y="150" font-family="Arial" font-size="54" font-weight="bold" fill="#142d47">Classes, objects &amp; encapsulation</text>
+<text x="80" y="194" font-family="Arial" font-size="25" fill="#4d6478">From a blueprint to an object, then controlled access to its data</text>
+<!-- blueprint -->
+<rect x="80" y="245" width="430" height="337" rx="24" fill="#e5f0ff" stroke="#a5c7f5" stroke-width="2"/>
+<circle cx="128" cy="291" r="22" fill="#2468bc"/><text x="128" y="299" text-anchor="middle" font-family="Arial" font-size="21" font-weight="bold" fill="white">1</text>
+<text x="168" y="301" font-family="Arial" font-size="30" font-weight="bold" fill="#184b88">Class = blueprint</text>
+<path d="M125 350h105v145H125z M145 375h65 M145 395h65 M145 427h65 M145 447h65" fill="none" stroke="#3981d0" stroke-width="5"/>
+<text x="258" y="359" font-family="monospace" font-size="22" fill="#173b63">class Person {</text>
+<text x="258" y="392" font-family="monospace" font-size="20" fill="#173b63">  firstName</text>
+<text x="258" y="424" font-family="monospace" font-size="20" fill="#173b63">  lastName</text>
+<text x="258" y="456" font-family="monospace" font-size="20" fill="#173b63">  displayNameDetails()</text>
+<text x="258" y="488" font-family="monospace" font-size="22" fill="#173b63">}</text>
+<text x="110" y="550" font-family="Arial" font-size="21" fill="#345a7b">Fields hold data; methods define behavior.</text>
+<!-- arrow -->
+<path d="M520 408H580" stroke="#65829c" stroke-width="4" marker-end="url(#arrow)"/>
+<text x="550" y="390" text-anchor="middle" font-family="monospace" font-size="20" fill="#425b72">new</text>
+<!-- object -->
+<rect x="590" y="245" width="430" height="337" rx="24" fill="#e5f8f1" stroke="#a4dcc7" stroke-width="2"/>
+<circle cx="638" cy="291" r="22" fill="#168261"/><text x="638" y="299" text-anchor="middle" font-family="Arial" font-size="21" font-weight="bold" fill="white">2</text>
+<text x="678" y="301" font-family="Arial" font-size="30" font-weight="bold" fill="#126c52">Object = instance</text>
+<circle cx="670" cy="385" r="29" fill="#8cd4b8"/><path d="M620 469c4-39 24-58 50-58s46 19 50 58" fill="#8cd4b8"/>
+<text x="750" y="365" font-family="monospace" font-size="21" fill="#185b4b">person1.firstName</text>
+<text x="750" y="395" font-family="monospace" font-size="21" fill="#185b4b">  = "Kanika"</text>
+<text x="750" y="431" font-family="monospace" font-size="21" fill="#185b4b">person1.lastName</text>
+<text x="750" y="461" font-family="monospace" font-size="21" fill="#185b4b">  = "Sharma"</text>
+<text x="620" y="526" font-family="Arial" font-size="21" fill="#326b5c">A method uses <tspan font-family="monospace">this</tspan> to read the</text>
+<text x="620" y="554" font-family="Arial" font-size="21" fill="#326b5c">current object's fields.</text>
+<!-- export -->
+<path d="M1030 408H1090" stroke="#65829c" stroke-width="4" marker-end="url(#arrow)"/>
+<rect x="1100" y="245" width="420" height="337" rx="24" fill="#fff1df" stroke="#edc896" stroke-width="2"/>
+<circle cx="1148" cy="291" r="22" fill="#bd711f"/><text x="1148" y="299" text-anchor="middle" font-family="Arial" font-size="21" font-weight="bold" fill="white">3</text>
+<text x="1188" y="301" font-family="Arial" font-size="30" font-weight="bold" fill="#925515">Share the instance</text>
+<path d="M1150 350h76v94h-76z M1250 350h76v94h-76z M1226 397h24" fill="none" stroke="#c98b3c" stroke-width="4"/>
+<text x="1150" y="485" font-family="monospace" font-size="20" fill="#794b1f">export { person1 };</text>
+<text x="1150" y="519" font-family="monospace" font-size="20" fill="#794b1f">import { person1 } ...</text>
+<text x="1150" y="554" font-family="Arial" font-size="20" fill="#825a34">The other file logs the object.</text>
+<!-- encapsulation -->
+<rect x="80" y="620" width="1440" height="335" rx="24" fill="#f0ebfc" stroke="#c9b9ed" stroke-width="2"/>
+<circle cx="128" cy="667" r="22" fill="#7150b6"/><text x="128" y="675" text-anchor="middle" font-family="Arial" font-size="21" font-weight="bold" fill="white">4</text>
+<text x="168" y="677" font-family="Arial" font-size="30" font-weight="bold" fill="#52398c">Encapsulation: access through properties</text>
+<text x="120" y="735" font-family="Arial" font-size="23" fill="#584777">Outside the class</text>
+<text x="120" y="780" font-family="monospace" font-size="23" fill="#3e3261">emp1.employeeSalary = 50000</text>
+<text x="120" y="822" font-family="monospace" font-size="23" fill="#3e3261">emp1.employeeSalary</text>
+<text x="120" y="877" font-family="Arial" font-size="21" fill="#584777">Assignment calls setter; reading calls getter.</text>
+<path d="M590 765H745" stroke="#8066b4" stroke-width="4" marker-end="url(#arrow)"/><text x="663" y="748" text-anchor="middle" font-family="Arial" font-size="19" fill="#654c97">set</text>
+<path d="M745 819H590" stroke="#8066b4" stroke-width="4" marker-end="url(#arrow)"/><text x="663" y="847" text-anchor="middle" font-family="Arial" font-size="19" fill="#654c97">get</text>
+<rect x="770" y="710" width="690" height="185" rx="18" fill="#fff" stroke="#cdbde9" stroke-width="2"/>
+<text x="800" y="752" font-family="Arial" font-size="23" font-weight="bold" fill="#52398c">Inside Employee</text>
+<text x="800" y="793" font-family="monospace" font-size="21" fill="#3e3261">private empSalary: number = 0</text>
+<text x="800" y="829" font-family="monospace" font-size="21" fill="#3e3261">set employeeSalary(value) { this.empSalary = value }</text>
+<text x="800" y="865" font-family="monospace" font-size="21" fill="#3e3261">get employeeSalary() { return this.empSalary }</text>
+<text x="80" y="1005" font-family="Arial" font-size="20" fill="#405a70">TypeScript types and <tspan font-family="monospace">private</tspan> are checked at compile time; they do not enforce runtime privacy.</text>
+<text x="80" y="1038" font-family="Arial" font-size="20" fill="#405a70">A class without an explicit constructor gets a default constructor. Examples simplified from the lesson files.</text>
+<text x="80" y="1075" font-family="Arial" font-size="17" fill="#71869a">SOURCE: november12th2026/ClassesAndObjects.ts + CallingAnotherSetOfClasses.ts</text>
+</svg>

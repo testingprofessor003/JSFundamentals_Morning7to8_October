@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1530" viewBox="0 0 1500 1530">
+<rect width="1500" height="1530" fill="#101c30"/>
+<style>text{font-family:Arial,sans-serif;fill:#edf4ff}.title{font-size:46px;font-weight:700}.sub{font-size:22px;fill:#b9cbe1}.head{font-size:26px;font-weight:700}.body{font-size:20px}.note{font-size:18px;fill:#c6d6e9}.code{font-family:monospace;font-size:19px;fill:#ddf6ff}.tag{font-size:18px;font-weight:700;fill:#76e5c4}</style>
+<text x="70" y="73" class="title">TypeScript constructors</text><text x="72" y="111" class="sub">14 NOV 2026  •  How a player object gets its initial state</text>
+<rect x="70" y="150" width="1360" height="180" rx="22" fill="#203653"/>
+<text x="105" y="196" class="head">1  Create → initialize → use</text>
+<rect x="110" y="226" width="300" height="64" rx="14" fill="#13263e"/><text x="136" y="267" class="code">new Players()</text>
+<path d="M424 258 H494 M482 249 L495 258 L482 267" stroke="#6ce0bd" stroke-width="4" fill="none"/>
+<rect x="510" y="226" width="370" height="64" rx="14" fill="#245b58"/><text x="538" y="254" class="body">constructor runs</text><text x="538" y="279" class="note">assigns initial fields via this</text>
+<path d="M895 258 H965 M953 249 L966 258 L953 267" stroke="#6ce0bd" stroke-width="4" fill="none"/>
+<rect x="980" y="226" width="400" height="64" rx="14" fill="#13263e"/><text x="1005" y="253" class="body">initialized player object</text><text x="1005" y="279" class="note">call its methods and accessors</text>
+<rect x="70" y="355" width="660" height="342" rx="22" fill="#203653"/><text x="105" y="400" class="head">2  No-argument constructor</text><text x="105" y="433" class="note">The lesson explicitly supplies initial values.</text>
+<rect x="105" y="454" width="590" height="186" rx="14" fill="#11243c"/>
+<text x="126" y="486" class="code">constructor() {</text><text x="150" y="517" class="code">this.playerName = "Lebron James";</text><text x="150" y="548" class="code">this.playerCountry = "USA";</text><text x="126" y="579" class="code">}</text><text x="126" y="616" class="code">const p1 = new Players();</text>
+<text x="105" y="674" class="note">Every new Players() receives these initial values.</text>
+<rect x="750" y="355" width="680" height="342" rx="22" fill="#203653"/><text x="785" y="400" class="head">3  Constructor with parameters</text><text x="785" y="433" class="note">Each call can supply different initial values.</text>
+<rect x="785" y="454" width="610" height="186" rx="14" fill="#11243c"/>
+<text x="805" y="485" class="code">constructor(name: string, country: string,</text><text x="850" y="511" class="code">position?: string) {</text><text x="830" y="537" class="code">this.playerName = name;</text><text x="830" y="563" class="code">this.playerCountry = country;</text><text x="830" y="589" class="code">this.playerPosition = position ? position : "";</text><text x="805" y="615" class="code">}</text>
+<text x="785" y="672" class="note">position? is optional; this example uses "" for falsy input.</text>
+<rect x="70" y="722" width="1360" height="235" rx="22" fill="#203653"/><text x="105" y="767" class="head">4  Fields, this, and accessors</text>
+<circle cx="132" cy="821" r="15" fill="#69dfbd"/><text x="161" y="827" class="body">this.playerName identifies the field on the current object; the parameter supplies its value.</text>
+<circle cx="132" cy="866" r="15" fill="#ffd27b"/><text x="161" y="872" class="body">private readonly name and country: initialized in the constructor; TypeScript prevents later assignment.</text>
+<circle cx="132" cy="911" r="15" fill="#9bbdff"/><text x="161" y="917" class="body">Getters expose values; the position setter updates the mutable private position field.</text>
+<rect x="70" y="982" width="1360" height="190" rx="22" fill="#203653"/><text x="105" y="1027" class="head">5  Object identity</text>
+<text x="105" y="1070" class="code">p2 = new Player("MS Dhoni", "India")</text><text x="105" y="1105" class="code">p3 = new Player("Chris Gayle", "West Indies")</text><text x="105" y="1140" class="note">Player abbreviates PlayersWithParameterizedConstructor here.</text>
+<path d="M680 1087 H750 M738 1078 L751 1087 L738 1096" stroke="#6ce0bd" stroke-width="4" fill="none"/>
+<text x="780" y="1065" class="body">p2 === p3  →  false</text><text x="780" y="1099" class="body">p2 = p3  →  both refer to the same object</text><text x="780" y="1133" class="body">p2 === p3  →  true</text>
+<rect x="70" y="1197" width="1360" height="206" rx="22" fill="#254451"/><text x="105" y="1240" class="head">Automation testing application</text><text x="105" y="1270" class="tag">BEYOND THE LESSON  •  Node.js test runner + strict assertions</text>
+<text x="105" y="1307" class="code">test("constructor initializes a player", () =&gt; {</text><text x="129" y="1335" class="code">const player = new PlayersWithParameterizedConstructor("MS Dhoni", "India");</text><text x="129" y="1363" class="code">assert.equal(player.countryOfThePlayer, "India");</text><text x="105" y="1391" class="code">});</text>
+<text x="72" y="1439" class="note">Assumes test, assert (strict mode), and the class are imported.</text>
+<text x="72" y="1470" class="note">Clarification: when omitted, JavaScript supplies a default constructor; TypeScript supports overload signatures with one implementation.</text>
+<text x="72" y="1500" class="note">Lesson source: november14th2026/ConstructorConcepts.ts  •  TypeScript and Node.js documentation</text>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1420" viewBox="0 0 1440 1420">
+<rect width="1440" height="1420" fill="#101b30"/>
+<style>text{font-family:Arial,sans-serif;fill:#eaf2ff}.title{font-size:48px;font-weight:700}.subtitle{font-size:22px;fill:#b9cbe4}.heading{font-size:28px;font-weight:700}.label{font-size:22px;font-weight:700}.body{font-size:19px}.small{font-size:17px;fill:#c5d4e8}.code{font-family:monospace;font-size:19px;fill:#e9f6ff}.accent{fill:#62e1c0}.gold{fill:#ffd175}</style>
+<text x="72" y="83" class="title">From constructors to array decisions</text>
+<text x="74" y="121" class="subtitle">14 NOV 2026  •  TypeScript  •  Players as the connecting example</text>
+<rect x="70" y="158" width="1300" height="286" rx="24" fill="#1e304d"/>
+<circle cx="134" cy="222" r="32" fill="#34c8a3"/><text x="122" y="231" style="font-size:26px;font-weight:bold;fill:#102337">1</text>
+<text x="184" y="220" class="heading">CREATE A PLAYER</text><text x="184" y="250" class="small">new calls the constructor as the object is created</text>
+<rect x="106" y="279" width="540" height="120" rx="14" fill="#12243d"/>
+<text x="130" y="312" class="code">new PlayersWithParameterizedConstructor(</text><text x="150" y="340" class="code">"Rohit Sharma", "India"</text><text x="130" y="368" class="code">)</text>
+<path d="M670 338 H726" stroke="#62e1c0" stroke-width="4"/><path d="M715 329 L728 338 L715 347" fill="none" stroke="#62e1c0" stroke-width="4"/>
+<text x="754" y="305" class="body">name + country → private readonly fields</text><text x="754" y="335" class="body">optional position → empty string if omitted</text><text x="754" y="365" class="body">getters read; position setter updates</text><text x="754" y="396" class="small">A separate no-argument constructor sets defaults.</text>
+<path d="M720 445 V482" stroke="#62e1c0" stroke-width="4"/><path d="M711 471 L720 484 L729 471" fill="none" stroke="#62e1c0" stroke-width="4"/>
+<rect x="70" y="492" width="1300" height="526" rx="24" fill="#1e304d"/>
+<circle cx="134" cy="552" r="32" fill="#f6bd60"/><text x="122" y="561" style="font-size:26px;font-weight:bold;fill:#243047">2</text>
+<text x="184" y="550" class="heading">ASK THE ARRAY DIFFERENT QUESTIONS</text><text x="184" y="581" class="small">Each method takes a callback; its return value determines the result.</text>
+<g transform="translate(109 625)"><rect width="390" height="148" rx="16" fill="#13263f"/><text x="21" y="34" class="label accent">forEach  →  perform an action</text><text x="21" y="65" class="body">Display each player’s details.</text><text x="21" y="98" class="small">Returns undefined.</text></g>
+<g transform="translate(525 625)"><rect width="390" height="148" rx="16" fill="#13263f"/><text x="21" y="34" class="label gold">filter  →  matching array</text><text x="21" y="65" class="body">country === "South Africa"</text><text x="21" y="98" class="small">Keeps matching player references.</text></g>
+<g transform="translate(941 625)"><rect width="390" height="148" rx="16" fill="#13263f"/><text x="21" y="34" class="label" fill="#b7a4ff">map  →  transformed array</text><text x="21" y="65" class="body">[50, 100] → [125000, 1000000]</text><text x="21" y="98" class="small">One result per element in this example.</text></g>
+<g transform="translate(109 793)"><rect width="390" height="148" rx="16" fill="#13263f"/><text x="21" y="34" class="label accent">find  →  first match</text><text x="21" y="65" class="body">Find "AB De Villers" by name.</text><text x="21" y="98" class="small">No match → undefined.</text></g>
+<g transform="translate(525 793)"><rect width="390" height="148" rx="16" fill="#13263f"/><text x="21" y="34" class="label gold">every  →  all match?</text><text x="21" y="65" class="body">All players from India? → false</text><text x="21" y="98" class="small">Empty array → true.</text></g>
+<g transform="translate(941 793)"><rect width="390" height="148" rx="16" fill="#13263f"/><text x="21" y="34" class="label">some  →  any match?</text><text x="21" y="65" class="body">Any player from India? → true</text><text x="21" y="98" class="small">Empty array → false.</text></g>
+<text x="109" y="983" class="small">Lesson detail: filter(...).map(...) assigns "Batsman" via the setter; it also changes those player objects.</text>
+<rect x="70" y="1045" width="1300" height="247" rx="24" fill="#253b4c"/>
+<circle cx="134" cy="1103" r="32" fill="#75b8ff"/><text x="122" y="1112" style="font-size:26px;font-weight:bold;fill:#102337">3</text>
+<text x="184" y="1100" class="heading">AUTOMATION TESTING APPLICATION</text><text x="184" y="1130" class="small">Beyond the lesson  •  Node.js test runner + strict assertions</text>
+<rect x="109" y="1153" width="1222" height="105" rx="13" fill="#11253a"/>
+<text x="131" y="1184" class="code">test("South Africa filter", () =&gt; {</text><text x="151" y="1212" class="code">const names = players.filter(p =&gt; p.countryOfThePlayer === "South Africa")</text><text x="290" y="1238" class="code">.map(p =&gt; p.nameOfThePlayer);</text><text x="710" y="1238" class="code">assert.deepEqual(names, ["Quinton De Kock"]); });</text>
+<text x="109" y="1279" class="small">The example assumes test and assert are imported, and players contains the lesson’s four objects.</text>
+<text x="72" y="1340" class="small">REFERENCE IDENTITY  •  After p2 = p3, both variables refer to the same object; equality is true.</text>
+<text x="72" y="1373" class="small">Sources: november14th2026/ConstructorConcepts.ts and ContinuationOfArrays.ts  •  TypeScript, MDN &amp; Node.js docs</text>
+</svg>

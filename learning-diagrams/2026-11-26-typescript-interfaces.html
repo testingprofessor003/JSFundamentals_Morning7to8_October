@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TypeScript interfaces | November 26, 2026</title>
+<style>
+:root{color-scheme:dark;--bg:#101c20;--panel:#192a2f;--line:#476065;--ink:#f7f0de;--muted:#bbccca;--mint:#9be2bd;--blue:#b9d7ff;--peach:#ffbd93;--mono:ui-monospace,Menlo,Consolas,monospace;--serif:Georgia,serif}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,sans-serif}a{color:var(--mint);text-underline-offset:.22em}a:hover{color:var(--ink)}a:focus-visible,summary:focus-visible{outline:2px solid var(--blue);outline-offset:5px}main,header,footer,nav{width:min(1136px,calc(100% - 64px));margin:auto}header{padding:48px 0 32px}h1,h2{font-family:var(--serif);font-weight:normal;line-height:1.06;margin:0}h1{font-size:clamp(47px,7vw,96px);letter-spacing:-.055em}h2{font-size:clamp(36px,5vw,58px);letter-spacing:-.04em}h3{font-size:22px;line-height:1.25;margin:.2em 0 .5em}p{margin:.6em 0}.eyebrow,.tag,.step small,.arrow small{font:700 12px/1.35 var(--mono);text-transform:uppercase;letter-spacing:.09em;color:var(--mint)}.intro{font-size:clamp(19px,2.4vw,27px);max-width:740px;color:var(--muted);margin-top:18px}.hero{display:grid;grid-template-columns:1fr 1fr 1fr;gap:22px;margin-top:32px}.hero a{padding:16px 0;border-top:1px solid var(--line);display:block;text-decoration:none;color:var(--ink);font-weight:650}.hero a:hover{border-color:var(--mint);color:var(--mint)}.hero strong{display:block;font:700 15px/1.4 var(--mono);color:var(--mint);margin-bottom:3px}.hero a:nth-child(2) strong{color:var(--blue)}.hero a:nth-child(3) strong{color:var(--peach)}
+nav{display:flex;gap:12px 22px;flex-wrap:wrap;padding:14px 0;border-bottom:1px solid var(--line)}nav a{font-size:14px}section{padding:52px 0;border-bottom:1px solid var(--line);scroll-margin-top:14px}.lead{max-width:750px;color:var(--muted);font-size:18px;margin:12px 0 24px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.wider{grid-template-columns:1.1fr .9fr}.panel,.step{min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:20px}.panel p:last-child,.panel ul:last-child{margin-bottom:0}.accent{border-top:3px solid var(--mint)}.blue{border-top:3px solid var(--blue)}.peach{border-top:3px solid var(--peach)}.blue .tag{color:var(--blue)}.peach .tag{color:var(--peach)}.row{margin-top:16px}.diagram{display:grid;grid-template-columns:minmax(0,1fr) 95px minmax(0,1fr);align-items:stretch;gap:12px}.arrow{display:grid;place-content:center;text-align:center;min-width:0}.arrow span{color:var(--mint);font-size:36px;line-height:1}.arrow small{font-size:10px;letter-spacing:0;color:var(--muted)}.steps{display:grid;grid-template-columns:minmax(0,1fr) 37px minmax(0,1fr) 37px minmax(0,1fr);gap:7px;align-items:stretch}.step small{display:block;margin-bottom:5px}.step strong{font-size:clamp(18px,2.4vw,26px)}code{font-family:var(--mono);font-size:.91em;color:var(--blue);overflow-wrap:anywhere}pre{margin:11px 0 0;padding:13px 14px;background:#0d191c;border-radius:9px;white-space:pre-wrap;overflow-wrap:anywhere;font-size:15px;line-height:1.55;tab-size:2}pre code{font-size:inherit;color:var(--ink)}.chain strong{font:700 clamp(12px,1.5vw,17px)/1.5 var(--mono);overflow-wrap:anywhere}.chain .step{padding:16px}.line{display:block;margin:4px 0;color:var(--muted)}.note{margin:15px 0 0;border-left:3px solid var(--peach);padding:4px 0 4px 13px;color:var(--muted)}.note strong{color:var(--ink)}.fields{list-style:none;margin:0;padding:0}.fields li{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid var(--line)}.fields li:last-child{border-bottom:0}.kind{font-size:14px;color:var(--muted);text-align:right}.optional{color:var(--blue)}.locked{color:var(--peach)}details{margin-top:16px;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:13px 16px}summary{cursor:pointer;color:var(--mint);font-weight:650}details p{margin-bottom:0}.tests{display:grid;gap:12px}.test{display:grid;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);gap:20px}.test pre{margin:0}.test p{color:var(--muted)}.test strong{color:var(--ink)}footer{padding:25px 0 48px;color:var(--muted)}footer ul{padding-left:20px}footer li{margin:.35em 0}footer .tag{margin-bottom:.55em}
+@media(max-width:720px){main,header,footer,nav{width:calc(100% - 36px)}header{padding-top:32px}.hero{gap:10px}.hero a{font-size:14px}.hero strong{font-size:12px}.grid,.wider,.test,.diagram{grid-template-columns:1fr}.diagram .arrow span{transform:rotate(90deg)}.steps{gap:4px;grid-template-columns:minmax(0,1fr) 19px minmax(0,1fr) 19px minmax(0,1fr)}.steps .arrow span{font-size:22px}.steps .step,.chain .step{padding:10px}.chain strong{word-break:normal}.step small{font-size:9px}.panel{padding:16px}section{padding:36px 0}.test{gap:8px}}
+@media(max-width:520px){.hero{grid-template-columns:1fr}.hero a{padding:7px 0}.hero strong{display:inline;margin-right:5px}.steps{grid-template-columns:1fr}.steps .arrow span{transform:rotate(90deg)}.step small{font-size:11px}}
+</style>
+</head>
+<body>
+<header>
+  <p class="eyebrow"><time datetime="2026-11-26">26 November 2026</time> · TypeScript fundamentals</p>
+  <h1>TypeScript interfaces</h1>
+  <p class="intro">An interface describes the shape a value must have so TypeScript can check how you create and use it.</p>
+  <div class="hero" aria-label="Lesson overview">
+    <a href="#hospitals"><strong>Hospitals</strong>Class contract and method chaining →</a>
+    <a href="#users"><strong>UserDetails</strong>Required, optional and readonly fields →</a>
+    <a href="#bank"><strong>BankAccount</strong>One contract, two implementations →</a>
+  </div>
+</header>
+<nav aria-label="Guide links">
+  <a href="#testing">Automation testing</a><a href="#sources">Sources</a><a href="2026-11-26-typescript-interfaces.gif">Animated recap</a>
+</nav>
+<main>
+<section id="hospitals">
+  <p class="tag">Class contract</p><h2>What can a hospital do?</h2>
+  <p class="lead"><code>Hospitals</code> abstracts hospital behavior into three instance method signatures. <code>ApolloHospitals</code> supplies the method bodies. TypeScript checks the match through <code>implements</code>, with no <code>override</code> keyword needed.</p>
+  <div class="diagram">
+    <div class="panel accent"><div class="tag">Class implementation</div><h3><code>ApolloHospitals</code></h3><p>The three instance methods log their messages and <code>return this</code>. Each class method declares <code>ApolloHospitals</code> as its return type.</p></div>
+    <div class="arrow" aria-label="implements"><span aria-hidden="true">→</span><small>implements</small></div>
+    <div class="panel accent"><div class="tag">Instance interface</div><h3><code>Hospitals</code></h3><pre><code>hospitalGuideLines(): Hospitals
+safetyMeasures(): Hospitals
+bestPractices(): Hospitals</code></pre></div>
+  </div>
+  <div class="row"><code>let hospital: Hospitals = new ApolloHospitals();</code><p>TypeScript sees the <code>Hospitals</code> methods through <code>hospital</code>. At runtime, each call runs the concrete <code>ApolloHospitals</code> method and hands back the same instance.</p></div>
+  <div class="steps chain" aria-label="Method chain log order">
+    <div class="step"><small>First log</small><strong>bestPractices()</strong><span class="line">Best practices</span></div><div class="arrow" aria-hidden="true"><span>→</span></div>
+    <div class="step"><small>Second log</small><strong>hospitalGuideLines()</strong><span class="line">Care guidelines</span></div><div class="arrow" aria-hidden="true"><span>→</span></div>
+    <div class="step"><small>Third log</small><strong>safetyMeasures()</strong><span class="line">Safety plan</span></div>
+  </div>
+  <div class="grid row">
+    <div class="panel peach"><div class="tag">Class side</div><h3><code>static pharmacySetup()</code></h3><p>Call <code>ApolloHospitals.pharmacySetup()</code> on the class. <code>implements Hospitals</code> checks the instance side, so the static method sits outside that contract.</p></div>
+    <div class="panel blue"><div class="tag">Runtime observation</div><h3><code>ApolloHospitals {}</code></h3><p>The console shows an instance with no own data fields. Its instance methods live on the prototype and still run when called.</p></div>
+  </div>
+  <p class="note"><strong>Combining contracts.</strong> A class can implement several interfaces with <code>implements A, B</code>, and an interface can extend several with <code>extends A, B</code>. A class can extend one base class.</p>
+</section>
+<section id="users">
+  <p class="tag">Object shape</p><h2>Which user fields are required?</h2>
+  <p class="lead">The lesson models a user record with <code>UserDetails</code>, the same kind of shape you can use to describe an expected API response.</p>
+  <div class="grid wider">
+    <div class="panel blue"><div class="tag">UserDetails contract</div>
+      <ul class="fields">
+        <li><code>id: number</code><span class="kind">Required</span></li>
+        <li><code>name: string</code><span class="kind">Required</span></li>
+        <li><code>profession: string</code><span class="kind">Required</span></li>
+        <li><code>experience: number</code><span class="kind">Required</span></li>
+        <li><code>age?: number</code><span class="kind optional">Optional</span></li>
+        <li><code>salary?: number</code><span class="kind optional">Optional</span></li>
+        <li><code>readonly offerLetter: string</code><span class="kind locked">Required · readonly</span></li>
+      </ul>
+    </div>
+    <div class="panel blue"><div class="tag">Lesson object</div><h3><code>userOne</code></h3><pre><code>id: 1
+name: 'Anureet'
+profession: 'QA Lead'
+experience: 15
+offerLetter: '…'</code></pre><p>The lesson prints <code>1</code>, <code>ANUREET</code> using <code>name.toUpperCase()</code>, and <code>15</code>, then assigns <code>experience = 18</code>. It omits both optional fields.</p></div>
+  </div>
+  <p class="note"><strong>Compile time and runtime.</strong> TypeScript rejects assigning a new <code>offerLetter</code> through this reference. The interface is erased when TypeScript emits JavaScript, so JSON validation requires a runtime check. With strict null checks, reading an omitted optional field can produce <code>undefined</code>.</p>
+</section>
+<section id="bank">
+  <p class="tag">Data and behavior</p><h2>Two ways to build a bank account</h2>
+  <p class="lead">Both implementations satisfy <code>BankAccount</code>. <code>deposit</code> adds to <code>this.balance</code> and returns no value. <code>withdraw</code> returns <code>false</code> without changing the balance if the amount exceeds it. Otherwise, it subtracts the amount and returns <code>true</code>.</p>
+  <div class="panel peach"><div class="tag">Shared BankAccount contract</div><div class="grid"><pre><code>accountHolderName: string
+balance: number</code></pre><pre><code>deposit(amount: number): void
+withdraw(amount: number): boolean</code></pre></div></div>
+  <div class="grid row">
+    <div class="panel"><div class="tag">Object literal matches the shape</div><h3><code>bankUserOne: BankAccount</code></h3><p>Vamsi’s object defines its own fields and both methods inline.</p></div>
+    <div class="panel"><div class="tag">Class implements the interface</div><h3><code>CheckAccounts implements BankAccount</code></h3><p>The constructor’s <code>public</code> parameters create and initialize both instance properties. Nirush starts at <code>40_000</code> and deposits <code>50_000</code>, giving <code>90_000</code>.</p></div>
+  </div>
+  <p class="tag row">Vamsi’s balance in the lesson</p>
+  <div class="steps" aria-label="Balance moves from 50,000 to 55,000 to 52,000">
+    <div class="step"><small>Starting balance</small><strong>50,000</strong></div><div class="arrow" aria-hidden="true"><span>→</span></div>
+    <div class="step"><small>Deposit 5,000</small><strong>55,000</strong></div><div class="arrow" aria-hidden="true"><span>→</span></div>
+    <div class="step"><small>Withdraw 3,000</small><strong>52,000</strong><span class="line">Returns <code>true</code></span></div>
+  </div>
+  <details><summary>Predict the result of withdrawing 52,001 next</summary><p><code>withdraw(52_001)</code> returns <code>false</code> and the balance stays at <code>52_000</code>. An amount equal to the balance would succeed and leave <code>0</code>.</p></details>
+</section>
+<section id="testing">
+  <p class="tag">Beyond the lesson · Node.js test runner</p><h2>Test the contract and the behavior</h2>
+  <p class="lead">These examples use built-in <code>node:test</code> and <code>node:assert/strict</code>. Copy the lesson to <code>lesson.ts</code> and export the types, fixture and classes in the imports below. Compile the TypeScript and run the emitted test file with <code>node --test</code>. The API example uses sample JSON in place of an HTTP response.</p>
+  <div class="panel"><div class="tag">Shared test imports</div><pre><code id="test-imports">import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { ApolloHospitals, CheckAccounts, bankUserOne } from './lesson.js';
+import type { BankAccount, Hospitals } from './lesson.js';</code></pre></div>
+  <div class="tests row">
+    <div class="panel test accent"><div><h3>Check that methods can chain</h3><p><strong>Input</strong> A fresh <code>ApolloHospitals</code> instance.<br><strong>Outcome</strong> Each instance method returns the same object, so the next call can be chained.</p></div><pre><code id="test-hospital">test('hospital methods return the same instance', () =&gt; {
+  const hospital: Hospitals = new ApolloHospitals();
+  assert.strictEqual(hospital.bestPractices(), hospital);
+  assert.strictEqual(hospital.hospitalGuideLines(), hospital);
+  assert.strictEqual(hospital.safetyMeasures(), hospital);
+});</code></pre></div>
+    <div class="panel test peach"><div><h3>Run the same check on two implementations</h3><p><strong>Input</strong> Both account types start with <code>100</code>.<br><strong>Outcome</strong> After depositing <code>25</code> and withdrawing <code>20</code>, an attempt to withdraw <code>106</code> returns <code>false</code> and leaves <code>105</code>.</p></div><pre><code id="test-bank">const accounts: [string, BankAccount][] = [
+  ['literal', { ...bankUserOne, balance: 100 }],
+  ['class', new CheckAccounts('Test account', 100)],
+];
+for (const [name, account] of accounts) {
+  test(`${name} preserves the balance on rejection`, () =&gt; {
+    account.deposit(25);
+    assert.strictEqual(account.withdraw(20), true);
+    assert.strictEqual(account.withdraw(106), false);
+    assert.strictEqual(account.balance, 105);
+  });
+}</code></pre></div>
+    <div class="panel test blue"><div><h3>Check a response field at runtime</h3><p><strong>Input</strong> Sample JSON for the <code>UserDetails.id</code> field.<br><strong>Outcome</strong> A numeric <code>id</code> passes. A string <code>id</code> causes an assertion failure. This check covers one field.</p></div><pre><code id="test-api">function assertNumericId(raw: string) {
+  const body = JSON.parse(raw);
+  assert.strictEqual(typeof body?.id, 'number');
+}
+
+test('JSON id must be numeric', () =&gt; {
+  assertNumericId('{"id":1}');
+  assert.throws(() =&gt; assertNumericId('{"id":"1"}'), {
+    code: 'ERR_ASSERTION',
+  });
+});</code></pre></div>
+  </div>
+</section>
+</main>
+<footer id="sources">
+  <p class="tag">Lesson and references</p>
+  <ul>
+    <li><a href="../november26th2026/InterfacesConcepts.ts">InterfacesConcepts.ts</a> · dated lesson source</li>
+    <li><a href="https://www.typescriptlang.org/docs/handbook/2/classes.html#implements-clauses">TypeScript class contracts</a>, <a href="https://www.typescriptlang.org/docs/handbook/2/classes.html#static-members">static members</a> and <a href="https://www.typescriptlang.org/docs/handbook/2/classes.html#parameter-properties">parameter properties</a></li>
+    <li><a href="https://www.typescriptlang.org/docs/handbook/2/objects.html#property-modifiers">TypeScript property modifiers</a>, <a href="https://www.typescriptlang.org/docs/handbook/2/objects.html#extending-types">interface extension</a> and <a href="https://www.typescriptlang.org/docs/handbook/2/basic-types.html#erased-types">type erasure</a></li>
+    <li><a href="https://nodejs.org/api/test.html">Node.js test runner</a> and <a href="https://nodejs.org/api/assert.html">assertions</a></li>
+  </ul>
+  <a href="2026-11-26-typescript-interfaces.gif">Open the animated recap</a>
+</footer>
+</body>
+</html>
